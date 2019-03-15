@@ -7,6 +7,6 @@ module.exports = {
   lintOnSave:false,  // 关闭eslint
   // webpack-dev-server 相关配置
   devServer: {
-    port: 8888,
+    port: 8080,
   },
 }
