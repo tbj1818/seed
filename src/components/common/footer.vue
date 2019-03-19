@@ -40,7 +40,7 @@ export default {
     },
      methods:{
              tabSwitch3:function(value,index){
-            this.$toast.text(index);
+            // this.$toast.text(index);
             },
      }  
 }

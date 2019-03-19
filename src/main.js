@@ -11,7 +11,6 @@ import './assets/main.css';
 import './assets/ydui.flexible';
 
 import Index from './components/index.vue'
-// import List from './components/list.vue'
 import SeedBuy from './components/seedBuy.vue'
 import Deal from './components/deal.vue'
 import Dealrecord from './components/dealrecord.vue'
@@ -54,14 +53,13 @@ Vue.use(VueRouter)
 //3、 配置路由
 const router = new VueRouter ({
   routes:[
-    {path: '/view/h5/app/seed/index.html',component: Index,meta:{title:'树苗交易'}},       //首页   注意这里一定不能加s，否则报错
-    // {path: '/view/h5/app/seed/list',component: List},   
-    {path: '/view/h5/app/seed/seedbuy/index.html',component: SeedBuy,meta:{title:'出售，购买树苗'}},           //出售，购买树苗
-    {path: '/view/h5/app/seed/deal/index.html',component: Deal,meta:{title:'挂单交易'}},                 //挂单交易
-    {path: '/view/h5/app/seed/dealrecord/index.html',component: Dealrecord,meta:{title:'交易记录'}},     //交易记录
-    {path: '/view/h5/app/seed/dealdetail/index.html',component: Dealdetail,meta:{title:'交易详情'}},     //交易详情
-    {path: '/view/h5/app/seed/orderdetail/index.html',component: Orderdetail,meta:{title:'挂单记录'}},   //挂单记录
-    {path: '*',redirect: '/view/h5/app/seed/index.html'}//防输错或者没找到页面路由错误，跳转到首页
+    {path: '/view/h5/app/seed',component: Index,meta:{title:'树苗交易'}},       //首页   注意这里一定不能加s，否则报错
+    {path: '/view/h5/app/seed/seedbuy',component: SeedBuy,meta:{title:'出售，购买树苗'}},           //出售，购买树苗
+    {path: '/view/h5/app/seed/deal',component: Deal,meta:{title:'挂单交易'}},                 //挂单交易
+    {path: '/view/h5/app/seed/dealrecord',component: Dealrecord,meta:{title:'交易记录'}},     //交易记录
+    {path: '/view/h5/app/seed/dealdetail',component: Dealdetail,meta:{title:'交易详情'}},     //交易详情
+    {path: '/view/h5/app/seed/orderdetail',component: Orderdetail,meta:{title:'挂单记录'}},   //挂单记录
+    {path: '*',redirect: '/view/h5/app/seed'}//防输错或者没找到页面路由错误，跳转到首页
   ],
   mode: 'history'
 })
