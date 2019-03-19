@@ -10,11 +10,11 @@ import './assets/ydui.css';
 import './assets/main.css';
 import './assets/ydui.flexible';
 
-import Index from './components/index.vue'
-import SeedBuy from './components/seedBuy.vue'
-import Deal from './components/deal.vue'
-import Dealrecord from './components/dealrecord.vue'
-import Dealdetail from './components/dealdetail.vue'
+// import Index from './components/index.vue'
+// import SeedBuy from './components/seedBuy.vue'
+// import Deal from './components/deal.vue'
+// import Dealrecord from './components/dealrecord.vue'
+// import Dealdetail from './components/dealdetail.vue'
 import Orderdetail from './components/orderdetail.vue'
 
 NutUI.install(Vue);
