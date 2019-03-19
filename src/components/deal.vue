@@ -1,5 +1,6 @@
 <template>
 <section>
+   <div class="root"  v-wechat-title="$route.meta.title"></div>
         <div class="seedcontain seedbg">
                 <ul class="tab-nav">
                     <li class="tab-nav-item"  :class="tabactive?'tab-active':''" @click="saletab(0)"><a href="javascript:;">我要出售</a></li>
@@ -47,7 +48,26 @@
                            </ul>
                          </section>
                   </div>
-                
+        </div>
+        <!-- 挂单确认弹窗 -->
+        <div class="mask-black-dialog" id="YDUI_CONFRIM" v-show="dialogshow">
+          <div class="m-confirm">
+            <div class="confirm-hd"><strong class="confirm-title">挂单确认</strong></div>
+            <div class="confirm-bd">出售内容: <em class="bluetext">树苗</em></div>
+            <div class="confirm-bd">出售总量: <em class="bluetext">100棵</em></div>
+            <div class="confirm-bd">树苗单价: <em class="bluetext">100BGT</em></div>
+            <div class="confirm-ft">
+              <a
+                href="javascript:;"
+                class="confirm-btn default"
+                @click="hide">取消</a>
+              <a
+                href="javascript:;"
+                class="confirm-btn primary"
+                @click="orderentrer"
+              ><em class="bluetext">确定</em></a>
+            </div>
+          </div>
         </div>
 </section>
 </template>
@@ -78,6 +98,10 @@ export default {
       },
       hide:function(){
           this.dialogshow=false;
+      },
+      orderentrer:function(){
+        this.$toast.text('点击了确定');
+        this.dialogshow=false;
       }
   }
 };

@@ -11,7 +11,7 @@
                 <div class="left_cell">出售总数:</div>
                 <div class="right_cell">10000</div>
               </div>
-               <div class="cellLR">
+              <div class="cellLR">
                 <div class="left_cell">剩余数量:</div>
                 <div class="right_cell">10000</div>
               </div>
@@ -48,16 +48,13 @@
       <button
         type="button"
         class="btn-block btn_redgradual"
-        @click="enterbuy">确定购买</button>
+        @click="enterbuy"
+      >确定购买</button>
     </div>
-
-    <div
-      class="mask-black-dialog"
-      id="YDUI_CONFRIM"
-      v-show="dialogshow"
-    >
+    <!-- 订单确认弹窗 -->
+    <div class="mask-black-dialog" id="YDUI_CONFRIM" v-show="dialogshow">
       <div class="m-confirm">
-        <div class="confirm-hd"><strong class="confirm-title">选填标题</strong></div>
+        <div class="confirm-hd"><strong class="confirm-title">订单确认</strong></div>
         <div class="confirm-bd">购买数量: <em class="bluetext">10棵</em></div>
         <div class="confirm-bd">订单总价: <em class="bluetext">100BGT</em></div>
         <div class="confirm-ft">

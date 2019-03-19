@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- 顶部header -->
-    <Header></Header>
+    <!-- <Header></Header> -->
    <router-view></router-view>
    <!-- 底部tabbar -->
     <Footer></Footer>
@@ -12,7 +12,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 // import Index from './components/index.vue'
 import Footer from './components/common/footer'
-import Header from './components/common/header'
+// import Header from './components/common/header'
 
 export default {
   name: 'app',
@@ -26,7 +26,6 @@ export default {
     },
     components:{
         Footer,
-        Header,
     },
 
 }

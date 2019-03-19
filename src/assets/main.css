@@ -47,7 +47,9 @@ section {
 }
 .pad5{padding: 5px}
 .pad10{padding:10px}
+.pad5{padding: 5px}
 .mar10{margin:10px}
+.margr10{margin-right:10px}
 
 ::-webkit-input-placeholder {
   color: #999;
@@ -66,7 +68,7 @@ section {
   background-size: 80%;
   text-align: left;
   border-radius: 10px;
-  padding: 10px 0 5px;
+  padding: 10px 0 5px;margin-bottom: 10px
 }
 .seedlist h1 {
   width: 100%;
@@ -89,7 +91,7 @@ section {
   margin-right: 10px;
 }
 .userphoto img {
-  width: 100%;
+  width: 100%;border-radius: 50%;
   vertical-align: middle;
 }
 .userName {
@@ -186,7 +188,7 @@ section {
   line-height: 0.6rem;
 }
 .confirm-hd .confirm-title {
-  font-size: 0.38rem;
+  font-size: 0.34rem;
   font-weight: bold;
 }
 .confirm-ft {
@@ -194,7 +196,7 @@ section {
   font-size: 0.28rem;
 }
 .bluetext {
-  color: #5856d0;
+  color: #5856d0 !important;
 }
 .graytext {
     color: #999; margin-left:5px
@@ -253,3 +255,15 @@ section {
 .tab-nav-item.tab-active:before{width: 50%; margin-left: -25%;    height: 3px;}
 .tab-nav-item:not(:last-child):after, .tab-nav:after{border: 0}
 .tab-panel{background: none}
+
+.sellIcon{width: 30px; height: 20px; display: inline-block}
+.sellIcon img{width: 100%}
+.bottborl{border-bottom:#F3F3F3 solid 1px; padding: 5px 0 }
+.blacktext{color: #333333 !important; font-size: .3rem !important; font-weight: bold}
+
+.succeedicon{width: 100%; text-align:center; padding: 20px 0;}
+.succeedicon img{width: 50px; margin:10px auto}
+.succeedicon p{ font-size: .3rem;color:#333 }
+
+.backout{position: absolute; right:40px; bottom:30px; width: 150px;}
+.backout img{ width:100%;}
