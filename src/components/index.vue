@@ -80,6 +80,7 @@ export default {
       errorImg01: 'this.src="' + require("../assets/notuserphoto.png") + '"',
       tabactive: true,
       tabactive2: false,
+      getType:10,
       buylist:[{
         userphoto:'',
         userName:'低调的风',
@@ -94,11 +95,15 @@ export default {
   methods:{
     saletab: function(type) {
       if (type == 0) {
+        this.getType=10;
         this.tabactive = true;
         this.tabactive2 = false;
+        this.getlist();
       } else if (type == 1) {
+        this.getType=20;
         this.tabactive = false;
         this.tabactive2 = true;
+        this.getlist();
       }
     },
 
@@ -110,7 +115,7 @@ export default {
       console.log(that.web);
           this.$http.post(this.web+'/appGameUserRoom/getGameList', {
               token:this.token,
-              getType:10,
+              getType:this.getType,
           }).then((data) => {
               console.log(data);
               this.buylist=data.data.data.dataList;
