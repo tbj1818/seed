@@ -4,14 +4,14 @@
     <!-- <Header></Header> -->
    <router-view></router-view>
    <!-- 底部tabbar -->
-    <Footer></Footer>
+    <!-- <Footer></Footer> -->
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 // import Index from './components/index.vue'
-import Footer from './components/common/footer'
+// import Footer from './components/common/footer'
 // import Header from './components/common/header'
 
 export default {
@@ -25,7 +25,7 @@ export default {
      
     },
     components:{
-        Footer,
+        // Footer,
     },
 
 }
