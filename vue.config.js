@@ -1,6 +1,6 @@
 module.exports = {
   // 基本路径
-  publicPath: '/view/h5/app/seed/',
+  publicPath: '/view/h5/app/seed/index.html',
   // 输出文件目录
   outputDir: 'dist',
   productionSourceMap:false,

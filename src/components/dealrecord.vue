@@ -8,7 +8,7 @@
 
                    <div class="seedWcontainr">
                         <div class="tab-panel-item">
-                          <router-link :to="{path: '/view/h5/app/seed/dealdetail?buystate=0'}">
+                          <router-link :to="{path: '/view/h5/app/seed/dealdetail/index.html?buystate=0'}">
                               <div class="m-cell seedWbg">
                                     <section class="cellLR bottborl">
                                       <span class="left_cell" v-if="buystate==0"  style="flex:1"><span class="sellIcon margr10"><img src="../assets/icon-chushou@2x.png" /></span>出售树苗</span>
