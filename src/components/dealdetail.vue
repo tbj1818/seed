@@ -134,7 +134,7 @@ export default {
 .seedcontain{padding: 0}
 .tab-panel{background: none}
 .m-cell:after{border: 0 !important}
-.seedWbg{width: 95% !important;}
+.seedWbg{width: 95% !important; margin-top: 10px !important;}
 </style>
 
 

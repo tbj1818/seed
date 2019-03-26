@@ -197,7 +197,8 @@ export default {
     .m-cell:after{border: 0 !important}
     .tab-nav-item{ background: #FFF !important;}
     .cell-item:not(:last-child){border-bottom: #f3f3f3 solid 1px}
-    .seedWbg{padding:0 10px 0 10px}
+    .seedWbg{padding:0 10px 0 10px; margin-top: 10px !important}
+    .tab-panel-item{padding-top:0}
 </style>
 
 

@@ -35,7 +35,7 @@
                     </section>
                     <section class="cellLR bottborl"  v-if="item.dealType==10">
                         <span class="left_cell" style="flex:1">已出售量</span>
-                        <span class="right_cell" style="flex:1">{{item.residueNum}}</span>
+                        <span class="right_cell" style="flex:1">{{item.goodsNum-item.residueNum}}</span>
                     </section>
                     <section class="cellLR"  v-if="item.dealType==20">
                         <span class="left_cell" style="flex:1">已购买量</span>
