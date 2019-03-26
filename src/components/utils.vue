@@ -1,5 +1,5 @@
 <script>
-const serverSrc='http://192.168.192.121:20060';
+const serverSrc='http://192.168.192.121:20050';
 const token='12345678';
 const hasEnter=false;
 const userSite="中国钓鱼岛";

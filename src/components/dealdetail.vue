@@ -60,9 +60,13 @@ export default {
     };
   },
   methods: {
-     
-     
-  }
+     getlist:function(){
+            
+     }
+  },
+   mounted:function(){
+        this.getlist()
+   }
 };
 </script>
  <style scoped>

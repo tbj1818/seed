@@ -1,269 +1,152 @@
-body {
-  font-family: "PingFang-SC-Medium", "microsoft yahei";
-  max-width: 750px;
-  padding-bottom: 10px;
-  margin: 0 auto;
-  height: 100%;
-  background: #f5f5f5 !important;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-p,
-blockquote,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-pre,
-form,
-fieldset,
-legend,
-button,
-input,
-textarea,
-th,
-td,
-iframe,
-section {
-  margin: 0;
-  box-sizing: border-box;
-  padding: 0;
-}
-::-webkit-scrollbar {
-  display: none;
-}
-.mart10 {
-  margin-top: 10px;
-}
-.marl10 {
-  margin-left: 10px;
-}
-.pad5{padding: 5px}
-.pad10{padding:10px}
-.pad5{padding: 5px}
-.mar10{margin:10px}
-.margr10{margin-right:10px}
 
-::-webkit-input-placeholder {
-  color: #999;
-}
+html { height: 100% }
+body { max-width: 750px; padding-bottom: 10px; margin: 0 auto; height: 100%; background: #F5F5F5; }
+.m-navbar { background: #FFF; position:fixed; top: 0; left: 0; z-index: 999; width: 100%; }
+.navbar-center .navbar-title { color: #030303; font-size: .3rem;    font-weight: bold; }
+.navbar-item .back-ico:before,
+.navbar-item .next-ico:before { color: #A2A3AB; font-size:.42rem }
+.m-navbar:after { border: 0 }
 
-.seedWcontainr {
-  width: 95%;
-  margin: 0 auto;
+.redloading { position: fixed; top: 50%; left: 50%; margin: -80px 0 0 -10%; z-index: 999999999; width: 20%; }
+.redloading img { width: 100% }
+.pukeloading { position: fixed; top: 50%; left: 50%; margin: -80px 0 0 -10%; z-index: 999999999; width: 15%; }
+.pukeloading img { width: 100%; }
+
+/*树苗交易区*/
+.navbar-item{font-size: 0.26rem !important}
+.seedhead{padding-top: 0.9rem;}
+.mart10 { margin-top: 10px; }
+.marl10 { margin-left: 10px; }
+.pad5 { padding: 5px }
+.pad10 { padding: 10px }
+.padtb5 { padding: 5px 0}
+.mar10 { margin: 10px }
+.margr10 { margin-right: 10px }
+.seedWcontainr { width: 95%; margin: 0 auto; }
+.seedbg { background: #f5f5f5; }
+.seedlist { width: 100%; background: #7cba28 url(../assets/seedlistRight.png) no-repeat right 0;    margin-bottom: 10px; background-size:60%; text-align: left; border-radius: 10px; padding:0 0 5px; }
+.seedlist h1 { width: 100%; color: #fff; margin:10px 0 0 10px; display: inline-block; font-size:15px; }
+.seedlist h2 { width: 100%; color: #fff; margin:5px 0 10px 10px; display: inline-block; font-size: 16px; }
+.userphoto { width: 40px; display: inline-block; margin-right: 10px; }
+.userphoto img { width: 100%; border-radius: 50%; vertical-align: middle; }
+.userName { display: inline-block; vertical-align: text-bottom;     line-height: 43px;}
+.seedWbg { width: 98%; margin:5px auto 0 !important; background: #fff; border-radius: 5px; padding: 0 10px 0 10px; }
+.seedWbg .listcell { width: 100%; border-bottom: #f3f3f3 solid 1px; padding:10px 0}
+.seedWbg .listcell p { line-height: 32px; font-size: 14px; }
+.nut-tab-item { height: auto !important; }
+.cellLR { width: 100%; display: flex; line-height: .5rem; font-size: 16px; }
+.cellLR .left_cell { width: 60%; text-align: left; color: #333; font-size:.26rem; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+.cellLR .right_cell { width: 40%; color: #666; text-align: left;font-size:.26rem; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -webkit-justify-content: flex-end; -ms-flex-pack: end; justify-content: flex-end; }
+.seedcontain { width: 100%; padding: 10px; }
+.seedbuynum { width: 100%; background: #fff; padding: 10px; margin-top: 10px; border-radius: 10px; }
+.seedbuynum h1 { width: 100%; line-height: 0.8rem; font-size: 0.34rem; color: #333; text-align: left; }
+.buynum { position: relative; }
+.seedbg .btn-hollow { position: absolute; right: 10px; top: 10px; border: 0; background: none; color: #fb403f; }
+.btn-hollow:after { border: 0 }
+.m-confirm { border-radius: 10px !important; }
+.confirm-hd { text-align: center !important; height: 1rem; }
+.confirm-bd { height: 0.6rem; line-height: 0.6rem; text-align: left; }
+.confirm-hd .confirm-title { font-size: 0.34rem; font-weight: bold; }
+.confirm-ft { line-height: 0.8rem; font-size: 0.32rem; }
+.bluetext { color: #5856d0 !important; }
+.graytext { color: #999; margin-left: 5px }
+.btn_redgradual { background: linear-gradient(270deg, rgba(255, 147, 83, .49) 0%, rgba(255, 85, 83, .49) 100%); border-radius: 5px; color: #fff; font-size: .34rem; font-weight: bold }
+.btn_redgradual.active { background: linear-gradient(270deg, rgba(255, 147, 83, 1) 0%, rgba(255, 85, 83, 1) 100%);}
+.roundicon { width:55px; height:55px; position: fixed; border-radius: 50%; right: 20px; bottom: 80px; text-align: center; box-shadow: 0 0 15px #A3A6FB; }
+.roundicon img { width: 100%; }
+.tab-nav-item { font-size: 0.3rem !important; }
+.tab-nav-item.tab-active { color: #5856d0 !important; font-weight: bold; }
+.rechargeaffirmbtn { width: 95%; background:rgba(88,86,208,.5); color: #fff; margin: 10px auto; }
+.rechargeaffirmbtn.active { width: 95%; background:rgba(88,86,208,1); color: #fff; margin: 10px auto; }
+.guadanrules { text-align: left; margin-left: 10px; }
+.guadanrules h1 { font-size: 0.3rem; line-height: 0.6rem; }
+.guadanrules li { font-size: 0.28rem; color: #999; line-height: 0.5rem; }
+.greenText { color: #66A61B; font-size: .3rem }
+.smallbuyBtn { background: linear-gradient(90deg, rgba(255, 85, 83, 1) 0%, rgba(255, 147, 83, 1) 100%); border-radius: 5px; border: 0; color: #FFF; padding: 8px 15px; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+.tab-nav-item.tab-active:before { width: 50%; margin-left: -25%; height: 3px; }
+.tab-nav-item:not(:last-child):after,.tab-nav:after { border: 0 }
+.tab-panel { background: none; margin-top: 10px }
+.sellIcon { width: 30px; height: 20px; display: inline-block }
+.sellIcon img { width: 100% }
+.bottborl { border-bottom: #F3F3F3 solid 1px;}
+.blacktext { color: #333333 !important; font-size: .3rem !important; font-weight: bold }
+.succeedicon { width: 100%; text-align: center; padding: 20px 0; }
+.succeedicon img { width: 50px; margin: 10px auto }
+.succeedicon p { font-size: .3rem; color: #333 }
+.backout { position: absolute; right: 40px; bottom: 30px; width: 120px; }
+.backout img { width: 100%; }
+.mask-black-dialog .confirm-bd{ font-size: .26rem; color: #333}
+.fontcolorB{ color: #bbb !important;}
+
+.m-cell:after {
+    border: 0;
 }
-.seedbg {
-  background: #f5f5f5;
-}
-.seedlist {
-  width: 100%;
-  background: #7cba28 url(../assets/seedlistRight.png) no-repeat right 0;
-  background-size: 80%;
-  text-align: left;
-  border-radius: 10px;
-  padding: 10px 0 5px;margin-bottom: 10px
-}
-.seedlist h1 {
-  width: 100%;
-  color: #fff;
-  margin: 5px 0 0 10px;
-  display: inline-block;
-  font-size: 16px;
-  line-height: 40px;
-}
-.seedlist h2 {
-    width: 100%;
-    color: #fff;
-    margin:0 0 0 10px;
-    display: inline-block;
-    font-size: 16px;
-  }
-.userphoto {
-  width: 40px;
-  display: inline-block;
-  margin-right: 10px;
-}
-.userphoto img {
-  width: 100%;border-radius: 50%;
-  vertical-align: middle;
-}
-.userName {
-  display: inline-block;
-  vertical-align: text-bottom;
-}
-.seedWbg {
-  width: 98%;
-  margin: 10px auto 0 !important;
-  background: #fff;
-  border-radius: 5px;
-  padding:0 10px 0 10px;
-}
-.seedWbg .listcell {
-  width: 100%;
-  border-bottom: #f3f3f3 solid 1px;
-}
-.seedWbg .listcell p {
-  line-height: 32px;
-  font-size: 14px;
-}
-.nut-tab-item {
-  height: auto !important;
-}
-.cellLR {
-  width: 100%;
-  display: flex;
-  line-height:.8rem;
-  font-size: 16px; 
-}
-.cellLR .left_cell {
-  width: 70%;
-  text-align: left; color: #333;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.cellLR .right_cell {
-  width: 30%;color: #666;
-  text-align: left;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-.seedcontain {
-  width: 100%;
-  padding: 10px;
+.paddtb10{padding: 10px 0}
+.lh15{ line-height: 1.5rem}
+.lh8{ line-height:.8rem}
+.lh10{ line-height:1rem}
+.lh12{ line-height: 1.2rem}
+
+.confirm-ft>button{    position: relative; border: 0;
+    text-align: center;
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0 2px;
 }
 
-.seedbuynum {
-  width: 100%;
-  background: #fff;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 10px;
+
+/*farm--email*/
+.seedemailbgwk{width: 100%; background: #FFDC8E; overflow: hidden;}
+.emailimg{width: 100%; position: relative;}
+.emailimg img{width: 100%}
+.seedemailbg{width:95%;background: #FFF9DE; border-radius: 10px;margin: 10px auto }
+.seedtext{width: 90%; margin:10px auto; }
+.seedtext h1{width:100%;color: #D5841C; text-align: center; font-size:24px; line-height: 38px; margin:10px auto;}
+.seedtext h2{width:100%;color: #D07707; text-align: left; font-size:17px; line-height: 38px; margin:10px auto; font-weight: normal}
+.centerimg{ text-align: center; margin-top: 20px}
+.centerimg img{  width:40%; margin: 0 auto}
+.seedcontent{ text-align: left; font-size: 16px; color:#D07707 ; margin-top: 20px; line-height:32px}
+.gofarmbtn{width:100%; background:#FCC456; border-radius: 10px; font-size: 18px; font-weight: bold; height: 50px; line-height: 50px; text-align: center; border: 0; margin: 10px auto; color: #FFF }
+.heartbeat{ position: absolute; left:50%; bottom: 0; margin:0 0 0 -40px; }
+.heartbeat img{
+    width:80px;
+    -webkit-animation-name: scaleDraw; /*关键帧名称*/
+    -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+    -webkit-animation-iteration-count: infinite;  /*动画播放的次数*/
+    -webkit-animation-duration:5s; /*动画所花费的时间*/
 }
-.seedbuynum h1 {
-  width: 100%;
-  line-height: 0.8rem;
-  font-size: 0.34rem;
-  color: #333;
-  text-align: left;
-}
-.buynum {
-  position: relative;
-}
-.seedbg .btn-hollow {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  border: 0;
-  background: none;
-  color: #fb403f;
+.userphoto{border-radius: 25%;}
+
+/*search*/
+.searchBox { width: 100%; margin: 0 auto; background: #BDBDBD; padding: 10px 0; }
+.nodata { width: 100%; text-align: center; line-height: 50px; color: #999; }
+.downtext { width: 100%; text-align: center; line-height: 50px; color: #999; }
+.confirm-ft>button{    position: relative; border: 0;
+    text-align: center;
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0 2px;
 }
 
-.btn-hollow:after{border: 0}
 
-.m-confirm {
-  border-radius: 10px !important;
-}
-.confirm-hd {
-  text-align: center !important;
-  height: 1rem;
-}
-.confirm-bd {
-  height: 0.6rem;
-  line-height: 0.6rem;
-}
-.confirm-hd .confirm-title {
-  font-size: 0.34rem;
-  font-weight: bold;
-}
-.confirm-ft {
-  line-height: 0.8rem;
-  font-size: 0.28rem;
-}
-.bluetext {
-  color: #5856d0 !important;
-}
-.graytext {
-    color: #999; margin-left:5px
-  }
 
-  .btn_redgradual{background:linear-gradient(270deg,rgba(255,147,83,.49) 0%,rgba(255,85,83,.49) 100%);
-    border-radius:5px; color: #fff; font-size: .34rem; font-weight: bold
+@keyframes scaleDraw {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+    0%{
+        transform: scale(1);  /*开始为原始大小*/
+    }
+    25%{
+        transform: scale(1.2); /*放大1.1倍*/
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.2);
+    }
 }
-
-.roundicon {
-  width: 1rem;
-  height: 1rem;
-  position: fixed;border-radius: 50%;
-  right: 20px;
-  bottom: 80px;
-  text-align: center;box-shadow: 0 0 15px #A3A6FB;
-}
-.roundicon img{
- width: 100%;
-}
-.tab-nav-item {
-  font-size: 0.3rem !important;
-}
-.tab-nav-item.tab-active {
-  color: #5856d0 !important;
-  font-weight: bold;
-}
-.rechargeaffirmbtn {
-  width: 95%;
-  background: #a5a4e2;
-  color: #fff;
-  margin: 10px auto;
-}
-.guadanrules {
-  text-align: left;
-  margin-left: 10px;
-}
-.guadanrules h1 {
-  font-size: 0.3rem;
-  line-height: 0.6rem;
-}
-.guadanrules li {
-  font-size: 0.26rem;
-  color: #999;
-  line-height: 0.5rem;
-}
-
-.greenText{color: #66A61B; font-size: .3rem}
-.smallbuyBtn{background:linear-gradient(90deg,rgba(255,85,83,1) 0%,rgba(255,147,83,1) 100%);border-radius:5px; border: 0; color: #FFF;  padding:8px 15px;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.tab-nav-item.tab-active:before{width: 50%; margin-left: -25%;    height: 3px;}
-.tab-nav-item:not(:last-child):after, .tab-nav:after{border: 0}
-.tab-panel{background: none}
-
-.sellIcon{width: 30px; height: 20px; display: inline-block}
-.sellIcon img{width: 100%}
-.bottborl{border-bottom:#F3F3F3 solid 1px; padding: 5px 0 }
-.blacktext{color: #333333 !important; font-size: .3rem !important; font-weight: bold}
-
-.succeedicon{width: 100%; text-align:center; padding: 20px 0;}
-.succeedicon img{width: 50px; margin:10px auto}
-.succeedicon p{ font-size: .3rem;color:#333 }
-
-.backout{position: absolute; right:40px; bottom:30px; width: 150px;}
-.backout img{ width:100%;}
