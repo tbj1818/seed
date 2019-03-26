@@ -61,8 +61,9 @@
                 <a href="javascript:;" @click="allbuy" class="btn btn-hollow" v-if="getType==20">全部出售</a>
             </section>
             <div class="cellLR" style="line-height:40px">
-                <div class="left_cell">最多持有7000棵</div>
-                <div class="right_cell">BGT余额: <span class="graytext marl10"> {{bgtnum | numSlicefour}}</span></div>
+                 <div class="left_cell"  v-if="getType==10">最多持有7000棵</div>
+                <div class="left_cell"  v-if="getType==20">当前树苗量:{{saplingNum}}</div>
+                <div class="right_cell"  v-if="getType==10">BGT余额: <span class="graytext marl10"> {{bgtnum | numSlicefour}}</span></div>
             </div>
         </div>
         <button type="button" class="btn-block btn_redgradual" @click="enterbuy" :class="btnactive?'active':''" v-if="getType==10">确定购买</button>
@@ -109,6 +110,7 @@ export default {
               web:this.GLOBAL.serverSrc,        //直接通过this访问全局变量。
               token: GetQueryString('token'),         //头部获取token,
                appType:'',             //设备来源
+                saplingNum:0,                      //我的树苗总量
                 UserNickname:decodeURIComponent(GetQueryString('userNickname')),//头部获取商品ID,
                 userPhoto:decodeURIComponent(GetQueryString('userPhoto')),//头部获取用户头像,
                 goodsId:GetQueryString('goodsId'),//头部获取商品ID,
@@ -183,7 +185,7 @@ export default {
                     var that = this;
                     this.$http({
                         method: "post",
-                        url: this.web + "/appRedPacket/getUserWalletInfo",
+                        url: this.web + "/appFundUserWallet/getUserWalletV2",
                         data: {
                             token: that.token,
                             platform: 'H5'
@@ -191,10 +193,19 @@ export default {
                         emulateJSON: true
                     }).then(function (data) {
                         // console.log(data);
-                        if (data.data.code == 0) {
-                            that.bgtnum = data.data.data.bgt;
-                        } else {
-                            that.$toast.text(data.data.message);
+                       if(data.data.code==0){
+                            this.saplingNum= data.data.data.saplingNum;
+                            // console.log(this.saplingNum);
+                            for(var i in data.data.data.walletInfo){
+                                var item =data.data.data.walletInfo;
+                                if(data.data.data.walletInfo[i].wallteType==30){
+                                    this.bgtnum=data.data.data.walletInfo[i].balance;
+                                }
+                            }
+                            // this.balance=data.data.data.walletInfo.balance;
+                            // console.log(data.data.data.walletInfo);
+                        }else{
+                            layer.msg(data.data.message);
                         }
                     }, function (error) {
                         that.$toast.text('接口出错');

@@ -47,7 +47,8 @@
                 </div>
                 <div class="m-cell seedWbg">
                     <section class="cellLR" style="line-height:1rem">
-                        <span class="left_cell" style="flex:1">购买树苗数量</span>
+                        <span class="left_cell" style="flex:1" v-if="getType==10">购买树苗数量</span>
+                        <span class="left_cell" style="flex:1" v-if="getType==20">出售树苗数量</span>
                         <span class="right_cell blacktext" style="flex:1">{{buyNum}}棵</span>
                     </section>
                 </div>
