@@ -157,7 +157,8 @@ export default {
                     }
                 },
             dealdetail:function(token,getType,item){
-                window.location.href="dealDetail.html?token="+token+"&getType="+getType+"&orderNo="+item.orderNo;
+                this.$router.push({ path: "/view/h5/app/seed/dealdetail",query: { token:  token,getType: getType,orderNo:item.orderNo}});
+                // window.location.href="dealDetail.html?token="+token+"&getType="+getType+"&orderNo="+item.orderNo;
             },
             goorderdetail:function(token){
                  this.$router.push({ path: "/view/h5/app/seed/orderdetail",query: { token:  token }});

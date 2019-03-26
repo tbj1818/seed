@@ -172,7 +172,7 @@ export default {
                         this.tabactive = true;
                         this.tabactive2 = false;
                         if(test.indexOf("getType")>=0){
-                            history.replaceState("", "Title", 'treeDeal.html?token='+this.token+'&getType=10');
+                            history.replaceState("", "Title", 'treeDeal.html?token='+this.token+'&getType=10'+"&appType="+this.appType);
                         }
                         this.getlist();
                     } else if (type ==20) {
@@ -181,7 +181,7 @@ export default {
                         this.tabactive2 = true;
                             
                         if(test.indexOf("getType")>=0){
-                            history.replaceState("", "Title", 'treeDeal.html?token='+this.token+'&getType=20');
+                            history.replaceState("", "Title", 'treeDeal.html?token='+this.token+'&getType=20'+"&appType="+this.appType);
                         }
                         this.getlist();
                     }
