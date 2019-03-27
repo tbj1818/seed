@@ -62,6 +62,7 @@
      <div class="pukeloading" v-show="loadpic">
         <img src="../assets/blueloading.gif" />
     </div>
+    <nut-backtop :right='25'></nut-backtop>
 </section>
 </template>
 <script>

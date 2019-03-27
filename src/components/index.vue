@@ -73,6 +73,7 @@
         <div class="roundicon" @click="pluslink(token)">
             <img src="../assets/rightPlus.png"/>
         </div>
+        <nut-backtop :right='25'></nut-backtop>
     </div>
 </template>
 
@@ -153,7 +154,7 @@ export default {
                                 }
                            
                         }else{
-                             this.$toast.text(data.data.message)
+                             that.$toast.text(data.data.message)
                         }
                     }, function (error) {
                          this.$toast.text('接口出错');
@@ -200,6 +201,7 @@ export default {
                 },
                 
                 goback:function(appType){
+                    var that=this;
                     if(appType==undefined){
                         console.log(localStorage.getItem("appType"));
                         var appType = localStorage.getItem("appType");
@@ -214,7 +216,7 @@ export default {
                         return;
                     } else {
                         console.log(1);
-                         this.$toast.text('请在手机端操作')
+                         that.$toast.text('请在手机端操作')
                         return;
                     }
                 },

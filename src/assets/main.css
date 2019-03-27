@@ -134,7 +134,10 @@ body { max-width: 750px; padding-bottom: 10px; margin: 0 auto; height: 100%; bac
     padding: 0 2px;
 }
 
-
+.nut-backtop-main {
+    width: 50px !important;
+    height: 50px !important;
+}
 
 @keyframes scaleDraw {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
     0%{

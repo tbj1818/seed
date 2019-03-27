@@ -81,7 +81,8 @@
     <!--等待图标-->
     <div class="pukeloading" v-show="loadpic">
         <img src="../assets/blueloading.gif" />
-    </div>     
+    </div>
+    <nut-backtop :right='25'></nut-backtop>
 </section>
 </template>
 <script>
