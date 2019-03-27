@@ -45,6 +45,7 @@
                         type="number" v-if="getType==10"
                          @input="inputFun($event.target)"
                         pattern="[0-9]*" v-model="buynum"
+                         oninput="if(value.length>4)value=value.slice(0,4)"
                         class="cell-input"
                         placeholder="请输入购买数量"
                         autocomplete="off"
@@ -53,6 +54,7 @@
                         type="number" v-if="getType==20"
                         @input="inputFun($event.target)"
                         pattern="[0-9]*" v-model="buynum"
+                         oninput="if(value.length>4)value=value.slice(0,4)"
                         class="cell-input"
                         placeholder="请输入出售数量"
                         autocomplete="off"
@@ -111,7 +113,7 @@ export default {
               token: GetQueryString('token'),         //头部获取token,
                appType:'',             //设备来源
                 saplingNum:0,                      //我的树苗总量
-                UserNickname:decodeURIComponent(GetQueryString('userNickname')),//头部获取商品ID,
+                UserNickname:decodeURIComponent(decodeURIComponent(GetQueryString('userNickname'))),//头部获取用户昵称,
                 userPhoto:decodeURIComponent(GetQueryString('userPhoto')),//头部获取用户头像,
                 goodsId:GetQueryString('goodsId'),//头部获取商品ID,
                 goodsNum:GetQueryString('goodsNum'),//头部获取出售总数,
@@ -171,7 +173,8 @@ export default {
                         if(data.data.code==0){
                             that.isDisable=false;
                             that.dialogshow = false;
-                                window.location.href="dealDetail.html?token="+token+"&orderNo="+data.data.data.orderNo+"&getType="+getType;
+                             that.$router.push({ path: "/view/h5/app/seed/dealdetail",query: { token:  token,getType: getType,orderNo:data.data.data.orderNo}});
+                                // window.location.href="dealDetail.html?token="+token+"&orderNo="+data.data.data.orderNo+"&getType="+getType;
                         }else{
                             that.isDisable=false;
                             that.$toast.text(data.data.message);
@@ -194,18 +197,18 @@ export default {
                     }).then(function (data) {
                         // console.log(data);
                        if(data.data.code==0){
-                            this.saplingNum= data.data.data.saplingNum;
+                            that.saplingNum= data.data.data.saplingNum;
                             // console.log(this.saplingNum);
                             for(var i in data.data.data.walletInfo){
                                 var item =data.data.data.walletInfo;
                                 if(data.data.data.walletInfo[i].wallteType==30){
-                                    this.bgtnum=data.data.data.walletInfo[i].balance;
+                                    that.bgtnum=data.data.data.walletInfo[i].balance;
                                 }
                             }
                             // this.balance=data.data.data.walletInfo.balance;
                             // console.log(data.data.data.walletInfo);
                         }else{
-                            layer.msg(data.data.message);
+                            that.$toast.text(data.data.message);
                         }
                     }, function (error) {
                         that.$toast.text('接口出错');
@@ -224,6 +227,7 @@ export default {
             },
         mounted:function(){
             this.getUserWalletInfo();
+            console.log(decodeURIComponent(this.UserNickname));
             this.appType = localStorage.getItem("appType");
         }
 };

@@ -196,7 +196,7 @@ export default {
                     // window.location.href = "orderDeal.html?token=" + token;
                 },
                 clickHandler: function (token,item) {
-                    this.$router.push({ path: "/view/h5/app/seed/seedBuy",query: { token:  token,goodsNum:item.goodsNum,residueNum:item.residueNum,goodsId:item.rowId,goodsPrice:item.goodsPrice, finishNum:item.userId,getType:this.getType,userNickname:encodeURIComponent(item.userNickname),userPhoto:encodeURIComponent(item.userPhoto)}});
+                    this.$router.push({ path: "/view/h5/app/seed/seedBuy",query: { token:  token,goodsNum:item.goodsNum,residueNum:item.residueNum,goodsId:item.rowId,goodsPrice:item.goodsPrice, finishNum:item.userId,getType:this.getType,userNickname:encodeURI(item.userNickname),userPhoto:item.userPhoto}});
                     // window.location.href = "seedBuy.html?token=" + token+"&goodsNum="+item.goodsNum+"&residueNum="+item.residueNum+"&goodsId="+item.rowId+"&goodsPrice="+item.goodsPrice+"&finishNum="+item.userId+"&getType="+this.getType+"&userNickname="+encodeURIComponent(item.userNickname)+"&userPhoto="+item.userPhoto;
                 },
                 
