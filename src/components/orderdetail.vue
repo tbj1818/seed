@@ -49,15 +49,15 @@
                         <span class="left_cell" style="flex:1">当前保证金</span>
                         <span class="right_cell" style="flex:1">{{item.promiseFeeResidue}}</span>
                     </section>
-                    <section class="cellLR "  v-if="item.state==10">
+                    <section class="cellLR paddtb10"  v-if="item.state==10">
                         <span class="left_cell" style="flex:1"></span>
                         <span class="right_cell bluetext" style="flex:1"><strong @click="cancelorder(item.rowId)">撤销挂单</strong></span>
                     </section>
-                    <section class="cellLR "  v-if="item.state==20">
+                    <section class="cellLR paddtb10"  v-if="item.state==20">
                         <span class="left_cell" style="flex:1"></span>
                         <span class="right_cell" style="flex:1"><strong >已成交</strong></span>
                     </section>
-                    <section class="cellLR "  v-if="item.state==30">
+                    <section class="cellLR paddtb10"  v-if="item.state==30">
                         <span class="left_cell" style="flex:1"></span>
                         <span class="right_cell" style="flex:1"><strong >已撤销</strong></span>
                     </section>
@@ -126,6 +126,7 @@ export default {
                     window.location.href="orderDeal.html?token="+this.token
                 },
                 cancelGoods:function(token){
+                    var that =this;
                     this.$http({
                         method: "post",
                         url: this.fund+ "/appSceneGoods/cancelGoods",
@@ -136,11 +137,12 @@ export default {
                         },
                         emulateJSON: true
                     }).then(function (data) {
-                        this.dialogshow=false;
-                         this.$toast.text(data.data.message);
-                        window.location.reload();
+                        that.dialogshow=false;
+                         that.$toast.text(data.data.message);
+                        that.orderlist=[];
+                        that.getlist();
                     }, function (error) {
-                         this.$toast.text('接口出错');
+                         that.$toast.text('接口出错');
                     })
                 },
                 getlist: function () {

@@ -12,17 +12,17 @@
        </a>
     </header>
         <!-- tab -->
-         <section>
+         <section class="fixedtop">
             <ul class="tab-nav">
-                <li class="tab-nav-item"
+                <button class="tab-nav-item"
                     :class="tabactive?'tab-active':''"
-                    @click="saletab(10)"
-                ><a href="javascript:;">购买树苗</a></li>
-                <li
+                    @click="saletab(10)" :disabled="isDisable"
+                ><a href="javascript:;">购买树苗</a></button>
+                <button
                         class="tab-nav-item"
                         :class="tabactive2?'tab-active':''"
-                        @click="saletab(20)"
-                ><a href="javascript:;">出售树苗</a></li>
+                        @click="saletab(20)"  :disabled="isDisable"
+                ><a href="javascript:;">出售树苗</a></button>
             </ul>
             <div class="tab-panel">
                 <div class="tab-panel-item tab-active">
@@ -53,14 +53,15 @@
                                     <span class="left_cell">树苗售价:<strong
                                             class="greenText">{{item.goodsPrice}}BGT/棵</strong></span>
                                     <span class="right_cell">
-                                        <button @click="clickHandler(token,item)" :disabled="isDisable" v-if="getType==10" class="smallbuyBtn">立即购买</button>
-                                        <button @click="clickHandler(token,item)" :disabled="isDisable"  v-if="getType==20" class="smallbuyBtn">立即出售</button>
+                                        <button @click="clickHandler(token,item)"  v-if="getType==10" class="smallbuyBtn">立即购买</button>
+                                        <button @click="clickHandler(token,item)"  v-if="getType==20" class="smallbuyBtn">立即出售</button>
                                   </span>
                                 </section>
                             </section>
                         </li>
                         <p class="nodata" v-if="buylist.length==0">暂无数据</p>
-                        <div class="nodata downtext" @click="loadMorelist(getType)" v-show="loadMore">加载更多</div>
+                        <div class="nodata downtext"  v-show="loadMore">加载更多中……</div>
+                        <div class="demo_line_02" v-if="!loadMore && bottomline"><span>我是有底线的</span></div>
                     </ul>
                 </div>
             </div>
@@ -99,10 +100,11 @@ export default {
                 tabactive2: false,  
                 isDisable:false,   
                 loadMore:false,
-                limit:20,
+                limit:5,
                 offset:1,
                 loadpic: true,      //等待图标       
                 buylist: [],
+                bottomline:false,
                 finishnum:[]
     };
   },
@@ -141,11 +143,13 @@ export default {
                                             if(item.userId=that.finishnum[num]){
                                                 item.userId=that.finishnum[num]
                                             };
-                                }
+                                };
+                                that.isDisable=false;
                                 if (data.data.data.list.length >= that.limit) {
                                     that.loadMore = true;
                                 }else{
                                     that.loadMore = false;
+                                    that.bottomline=true;
                                     //  this.$toast.text('已加载完');
                                 }
                             }else{
@@ -165,6 +169,7 @@ export default {
                 },
                 saletab: function (type) {
                     var test=window.location.href;  
+                    this.isDisable=true;
                     // console.log(test);
                     this.buylist=[];
                     this.offset=1;
@@ -220,6 +225,23 @@ export default {
                         return;
                     }
                 },
+                onScroll:function(){
+                    var that =this;
+                    //可滚动容器的高度
+                    var scrollHeight = document.body.scrollHeight||document.documentElement.scrollHeight;//文档高度
+                    //屏幕尺寸高度
+                    var outerHeight = window.innerHeight||document.body.clientHeight||document.documentElement.clientHeight;//浏览器窗口高度
+                    //可滚动容器超出当前窗口显示范围的高度
+                    var scrollTop = document.body.scrollTop||document.documentElement.scrollTop;
+                    //scrollTop在页面为滚动时为0，开始滚动后，慢慢增加，滚动到页面底部时，出现scrollHeight < (outerHeight + scrollTop)的情况，严格来讲，是接近底部。
+                    // layer.msg(scrollHeight + " " + outerHeight + " " + scrollTop);
+                    if (scrollHeight <= (outerHeight + scrollTop)) {
+                        if(this.loadMore){
+                            //加载更多操作
+                                this.getlist();
+                        }
+                    }
+                }
   },
   mounted:function(){
      if(this.getType==10){
@@ -235,6 +257,9 @@ export default {
                     this.getlist();
     }
   },
+  created() {
+                window.addEventListener('scroll', this.onScroll);
+            },
   beforeCreate:function(){
                     //加载层
                     var that = this;
@@ -246,4 +271,5 @@ export default {
 </script>
 <style scoped>
  .hello .tab-panel-item{margin: 0 auto; padding: 0; width: 95%}
+ button{border: 0}
 </style>

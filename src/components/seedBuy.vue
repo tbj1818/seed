@@ -2,7 +2,7 @@
   <section>
     <div class="seedcontain seedbg">
            <header class="m-navbar">
-            <a href="javascript:;" @click="goback"  class="navbar-item">
+            <a href="javascript:history.go(-1);"  class="navbar-item">
                 <i class="back-ico"></i>
             </a>
             <div class="navbar-center">
@@ -139,7 +139,7 @@ export default {
             },
     enterbuy: function() {
                 if(!this.buynum){
-                    this.$toast.text('请输入购买数量');
+                    this.$toast.text('请输入交易数量');
                     return;
                 }else{
                     this.dialogshow = true;

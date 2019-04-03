@@ -26,7 +26,7 @@
         ><a href="javascript:;">我要购买</a></li>
       </ul>
 
-      <div class="seedWcontainr">
+      <div class="seedWcontainr fixedtop">
         <div class="tab-panel-item tab-active">
           <div class="m-cell seedWbg">
             <div class="cell-item">
@@ -318,8 +318,7 @@ export default {
              that.$toast.text(data.data.message);
             that.isDisable = false;
 
-            window.location.href =
-              "treeDeal.html?token=" + token + "&getType=10";
+            window.history.go(-1);
           } else {
             that.isDisable = false;
              that.$toast.text(data.data.message);

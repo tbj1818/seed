@@ -2,7 +2,7 @@
 <section>
         <div class="seedcontain seedbg">
             <header class="m-navbar">
-            <a href="javascript:;" @click="goback"  class="navbar-item">
+            <a href="javascript:history.go(-1);"  class="navbar-item">
                 <i class="back-ico"></i>
             </a>
             <div class="navbar-center">
@@ -17,7 +17,7 @@
             <li class="tab-nav-item"  :class="tabactive2?'tab-active':''" @click="saletab(10)"><a href="javascript:;">我购买的</a></li>
         </ul>
 
-        <div class="seedWcontainr">
+        <div class="seedWcontainr fixedtop">
             <div class="tab-panel-item">
                     <div class="m-cell seedWbg" @click="dealdetail(token,getType,item)" v-for="(item,index) in orderlist" :key="index">
                         <section class="cellLR bottborl lh8">
@@ -115,14 +115,14 @@ export default {
                                             item.sellerUserNickname='微信昵称';
                                         }
                                 }
-                                if (data.data.data.list.length >= this.limit) {
-                                    this.loadMore = true;
+                                if (data.data.data.list.length >= that.limit) {
+                                    that.loadMore = true;
                                 }else{
-                                    this.loadMore = false;
+                                    that.loadMore = false;
                                     // layer.msg('已加载完');
                                 }
                             }else{
-                                this.loadMore = false;
+                                that.loadMore = false;
                                     // layer.msg('已加载完'); 
                             }
                         }else{
@@ -200,6 +200,7 @@ export default {
     .cell-item:not(:last-child){border-bottom: #f3f3f3 solid 1px}
     .seedWbg{padding:0 10px 0 10px; margin-top: 10px !important}
     .tab-panel-item{padding-top:0}
+     .seedhead{padding-top:1.8rem !important;}
 </style>
 
 

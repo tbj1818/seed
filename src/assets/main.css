@@ -13,6 +13,7 @@ body { max-width: 750px; padding-bottom: 10px; margin: 0 auto; height: 100%; bac
 .pukeloading img { width: 100%; }
 
 /*树苗交易区*/
+.fixedtop{margin-top: 1rem !important;}
 .navbar-item{font-size: 0.26rem !important}
 .seedhead{padding-top: 0.9rem;}
 .mart10 { margin-top: 10px; }
@@ -96,7 +97,7 @@ body { max-width: 750px; padding-bottom: 10px; margin: 0 auto; height: 100%; bac
     flex: 1;
     padding: 0 2px;
 }
-
+.seedbg .cell-input, .seedbg .cell-right{font-size: .28rem !important;}
 
 /*farm--email*/
 .seedemailbgwk{width: 100%; background: #FFDC8E; overflow: hidden;}
@@ -119,7 +120,19 @@ body { max-width: 750px; padding-bottom: 10px; margin: 0 auto; height: 100%; bac
     -webkit-animation-duration:5s; /*动画所花费的时间*/
 }
 .userphoto{border-radius: 25%;}
-
+.demo_line_02{
+    margin-top: 25px;
+    height: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+.demo_line_02 span{
+    color: #666;
+    position: relative;
+    top: -8px;
+    background:#F5F5F5;
+    padding: 0 20px;
+}
 /*search*/
 .searchBox { width: 100%; margin: 0 auto; background: #BDBDBD; padding: 10px 0; }
 .nodata { width: 100%; text-align: center; line-height: 50px; color: #999; }
@@ -137,6 +150,12 @@ body { max-width: 750px; padding-bottom: 10px; margin: 0 auto; height: 100%; bac
 .nut-backtop-main {
     width: 50px !important;
     height: 50px !important;
+}
+.seedhead .tab-nav {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0.9rem;
 }
 
 @keyframes scaleDraw {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
